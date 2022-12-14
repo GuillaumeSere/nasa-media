@@ -22,7 +22,7 @@ const Epic = () => {
         <div className='container-post'>
             {epic.collection.items.map((post, index) => {
                 return (
-                    <div className='epic-card'>
+                    <div className='epic-card' key={index}>
                         <div className='epic-title'>{post.data[0].title}</div>
                         <img className='epic-image' src={post.links[0].href} alt="" />
                         <div className='epic-description'>{post.data[0].description}</div>
