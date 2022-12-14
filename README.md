@@ -8,8 +8,6 @@
 ![20221214165125](https://user-images.githubusercontent.com/75996200/207643898-27e83aea-ea3d-44a9-adfc-21af86ecbb56.png)
 
 
-![20221214165156](https://user-images.githubusercontent.com/75996200/207644538-d2c064f0-7e29-48d1-adf7-9978e4b1ea79.png)
-
 
 ![20221214165156](https://user-images.githubusercontent.com/75996200/207643939-19cd2792-4977-45c1-80f1-754d09c3dcb4.png)
 
