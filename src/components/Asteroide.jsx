@@ -12,7 +12,6 @@ const Asteroide = () => {
             )
             const data = await res.json()
             setAsteroide(data)
-            console.log(data)
         }
     }, [])
 
@@ -21,7 +20,6 @@ const Asteroide = () => {
     return (
         <div className='container-post'>
             {asteroide.near_earth_objects.map((post, index) => {
-                console.log(post)
                 return (
                     <div className='asteroide-card' key={index}>
                         <div className='asteroide-name'>{post.name}</div>

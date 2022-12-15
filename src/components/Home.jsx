@@ -12,7 +12,6 @@ const Home = () => {
             )
             const data = await res.json()
             setExoplanetes(data)
-            console.log(data)
         }
     }, [])
 

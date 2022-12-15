@@ -12,7 +12,6 @@ const Epic = () => {
             )
             const data = await res.json()
             setEpic(data)
-            console.log(data)
         }
     }, [])
 

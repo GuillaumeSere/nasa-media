@@ -12,7 +12,6 @@ const NasaPhoto = () => {
             )
             const data = await res.json()
             setPhotoData(data)
-            console.log(data)
         }
     }, [])
 
