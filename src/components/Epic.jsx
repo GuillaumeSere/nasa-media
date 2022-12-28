@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { Player } from '@lottiefiles/react-lottie-player';
+import animation from '../images/107321-rocket.json'
 
 const Epic = () => {
 
@@ -18,6 +20,14 @@ const Epic = () => {
     if (!epic) return <div />
 
     return (
+        <>
+        <Player
+        autoplay
+        loop
+        src={animation}
+        style={{ height: '300px', width: '300px', paddingTop: '5rem', marginBottom: '-12rem', marginLeft: '10rem' }}
+    >
+    </Player>
         <div className='container-post'>
             {epic.collection.items.map((post, index) => {
                 return (
@@ -29,6 +39,7 @@ const Epic = () => {
                 )
             })}
         </div>
+        </>
     )
 }
 

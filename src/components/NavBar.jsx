@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../images/logo.png'
 import DayNightToggle from 'react-day-and-night-toggle'
+import { Player } from '@lottiefiles/react-lottie-player';
+import animation from '../images/23661-nasa-logo.json'
 
 const NavBar = () => {
 
@@ -37,7 +39,15 @@ const NavBar = () => {
                 checked={isDarkMode}
                 className="toggle-theme"
             />
-            <img className='logo' src={logo} alt="logo" />
+            {/* { <img className='logo' src={logo} alt="logo" />} */}
+            <Player
+                autoplay
+                loop
+                src={animation}
+                className='logo'
+                style={{ height: '80px', width: '100px', marginTop: '-2.5rem'}}
+            >
+            </Player>
         </div>
     )
 }

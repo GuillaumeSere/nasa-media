@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { Player } from '@lottiefiles/react-lottie-player';
+import animation from '../images/57190-spaceman-walking.json'
 
 const Home = () => {
 
@@ -20,6 +22,13 @@ const Home = () => {
     return (
         <div className='container-post'>
             <div className="home-description">{exoplanetes.explanation}</div>
+            <Player
+                autoplay
+                loop
+                src={animation}
+                style={{ height: '300px', width: '300px' }}
+            >
+            </Player>
             <div className='home-card'>
                 <div className='home-title'>{exoplanetes.title}</div>
                 <div className='home-date'>{exoplanetes.date}</div>

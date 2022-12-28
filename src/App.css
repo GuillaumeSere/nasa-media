@@ -44,7 +44,7 @@ body[data-theme=dark] {
 }
 
 .logo{
-    position: absolute;
+    position: absolute !important;
     right: 0;
     height: 80px;
     width: 90px;
@@ -234,7 +234,11 @@ body[data-theme=dark] {
         padding-top: 1rem;
     }
     .logo{
-        margin-top: 2rem;
+        margin-top: -10rem !important;
+    }
+    .curiosity{
+        position: relative !important;
+       padding-top: 9rem !important;
     }
     .container-post{
         padding-top: 10rem;
