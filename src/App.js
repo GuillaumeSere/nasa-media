@@ -5,6 +5,7 @@ import NasaPhoto from './components/NasaPhoto';
 import NavBar from './components/NavBar';
 import Asteroide from './components/Asteroide';
 import Epic from './components/Epic';
+import Search from './components/Search';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route path="/curiosity" element={ <NasaPhoto />} />
             <Route path="/asteroide" element={ <Asteroide />} />
             <Route path="/epic" element={ <Epic />} />
+            <Route path="/recherche" element={ <Search />} />
         </Routes>
     </div>
   );

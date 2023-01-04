@@ -34,6 +34,7 @@ const NavBar = () => {
             <Link className='nav-link' to="/curiosity">CURIOSITY</Link>
             <Link className='nav-link' to="/asteroide">ASTEROÏDES</Link>
             <Link className='nav-link' to="/epic">PHOTOS NASA</Link>
+            <Link className='nav-link' to="/recherche">RECHERCHE</Link>
             <DayNightToggle
                 onChange={handleChangeTheme}
                 checked={isDarkMode}
