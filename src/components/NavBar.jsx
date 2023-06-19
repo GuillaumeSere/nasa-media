@@ -39,6 +39,7 @@ const NavBar = () => {
                 onChange={handleChangeTheme}
                 checked={isDarkMode}
                 className="toggle-theme"
+                size= "20"
             />
             {/* { <img className='logo' src={logo} alt="logo" />} */}
             <Player
