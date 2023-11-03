@@ -1,57 +1,50 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import logo from '../images/logo.png'
-import DayNightToggle from 'react-day-and-night-toggle'
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import logo from '../images/logo.png';
+import DayNightToggle from 'react-day-and-night-toggle';
 import { Player } from '@lottiefiles/react-lottie-player';
-import animation from '../images/23661-nasa-logo.json'
+import animation from '../images/23661-nasa-logo.json';
 
 const NavBar = () => {
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    const defaultTheme = prefersDarkScheme.matches;
 
-    const [isDarkMode, setIsDarkMode] = useState(localStorage.getItem('data-theme') === 'dark' ? true : false)
-
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-        const newColorScheme = e.matches ? 'dark' : 'light'
-
-        setIsDarkMode(newColorScheme === 'dark' ? true : false)
-        localStorage.setItem('data-theme', newColorScheme)
-        document.body.setAttribute('data-theme', localStorage.getItem('data-theme'))
-    })
+    const [isDarkMode, setIsDarkMode] = useState(
+        localStorage.getItem('data-theme') === 'dark' || defaultTheme
+    );
 
     const handleChangeTheme = () => {
-        setIsDarkMode(!isDarkMode)
-        if (!isDarkMode) {
-            localStorage.setItem('data-theme', 'dark')
-            document.body.setAttribute('data-theme', 'dark')
-        } else {
-            localStorage.setItem('data-theme', 'light')
-            document.body.setAttribute('data-theme', 'light')
-        }
-    }
+        const newTheme = !isDarkMode ? 'dark' : 'light';
+        setIsDarkMode(!isDarkMode);
+        localStorage.setItem('data-theme', newTheme);
+        document.body.setAttribute('data-theme', newTheme);
+    };
+
+    useEffect(() => {
+        const newTheme = isDarkMode ? 'dark' : 'light';
+        localStorage.setItem('data-theme', newTheme);
+        document.body.setAttribute('data-theme', newTheme);
+    }, [isDarkMode]);
 
     return (
         <div className='navbar'>
-            <Link className='nav-link' to="/">ACCUEIL</Link>
-            <Link className='nav-link' to="/curiosity">CURIOSITY</Link>
-            <Link className='nav-link' to="/asteroide">ASTEROÏDES</Link>
-            <Link className='nav-link' to="/epic">PHOTOS NASA</Link>
-            <Link className='nav-link' to="/recherche">RECHERCHE</Link>
+            {/* Vos liens */}
             <DayNightToggle
                 onChange={handleChangeTheme}
                 checked={isDarkMode}
                 className="toggle-theme"
-                size= "20"
+                size={20}
             />
-            {/* { <img className='logo' src={logo} alt="logo" />} */}
             <Player
                 autoplay
                 loop
                 src={animation}
                 className='logo'
-                style={{ height: '80px', width: '100px', marginTop: '-2.5rem'}}
-            >
-            </Player>
+                style={{ height: '80px', width: '100px', marginTop: '-2.5rem' }}
+            />
         </div>
-    )
-}
+    );
+};
 
-export default NavBar
+export default NavBar;
+
