@@ -348,6 +348,17 @@ h1{
     background-color: #FF4F88;
 }
 
+::-webkit-scrollbar{
+    width: 7px;
+}
+::-webkit-scrollbar-track{
+    background: black;
+}
+::-webkit-scrollbar-thumb{
+    background: white;
+    border-radius: 10px;
+}
+
 @media (max-width: 570px){
     .search{
         height: 300px !important;
