@@ -116,6 +116,7 @@ body[data-theme=dark] {
 }
 
 .pagination button{
+    box-shadow:4px 4px 3px -3px grey;
     background: #000000;
     color: white;
     padding: 0.5rem;
