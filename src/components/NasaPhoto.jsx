@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Player } from '@lottiefiles/react-lottie-player';
 import animation from '../images/28514-mars-2020-nasa-mission.json';
-import { FaChevronRight } from "react-icons/fa";
-import { FaChevronLeft } from "react-icons/fa";
+import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
 
 const NasaPhoto = () => {
   const [photoData, setPhotoData] = useState(null);
@@ -65,15 +64,19 @@ const NasaPhoto = () => {
       </div>
       <div className='pagination'>
         <button onClick={prevPage} disabled={currentPage === 1}>
-        <FaChevronLeft />
+          <FaChevronLeft />
         </button>
         {Array.from({ length: totalPages }, (_, index) => (
-          <button key={index + 1} onClick={() => setCurrentPage(index + 1)}>
+          <button
+            key={index + 1}
+            onClick={() => setCurrentPage(index + 1)}
+            className={currentPage === index + 1 ? 'selected' : ''}
+          >
             {index + 1}
           </button>
         ))}
         <button onClick={nextPage} disabled={currentPage === totalPages}>
-        <FaChevronRight />
+          <FaChevronRight />
         </button>
       </div>
     </>
@@ -81,4 +84,5 @@ const NasaPhoto = () => {
 };
 
 export default NasaPhoto;
+
 

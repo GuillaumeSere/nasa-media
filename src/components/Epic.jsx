@@ -63,7 +63,11 @@ const Epic = () => {
           <FaChevronLeft />
         </button>
         {Array.from({ length: totalPages }, (_, index) => (
-          <button key={index + 1} onClick={() => setCurrentPage(index + 1)}>
+          <button
+            key={index + 1}
+            onClick={() => setCurrentPage(index + 1)}
+            className={currentPage === index + 1 ? 'selected' : ''}
+          >
             {index + 1}
           </button>
         ))}
@@ -76,3 +80,4 @@ const Epic = () => {
 };
 
 export default Epic;
+
