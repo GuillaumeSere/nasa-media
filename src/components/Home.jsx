@@ -20,7 +20,7 @@ const Home = () => {
     if (!exoplanetes) return <div />
 
     return (
-        <div className='container-post'>
+        <div className='container-post-home'>
             <div className="home-description">{exoplanetes.explanation}</div>
             <Player
                 autoplay
