@@ -62,6 +62,7 @@ body[data-theme=dark] {
     display: none;
 }
 
+
 .logo {
     position: absolute;
     right: 1rem;
@@ -449,6 +450,7 @@ h1 {
         display: none;
     }
 
+
     .close-menu{
         display: inline;
         cursor: pointer;
@@ -473,6 +475,12 @@ h1 {
     .menu.active {
         display: flex;
         /* Afficher le menu lorsque actif */
+    }
+    .close-menu.active{
+        display: flex;
+    }
+    .close-menu.hidden{
+        display: none;
     }
 
     .nav-link {

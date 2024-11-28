@@ -48,7 +48,7 @@ const NavBar = () => {
                 >
                 </Player>
             </div>
-            <div className={`close-menu ${!isMenuOpen ? 'hidden' : ''}`} onClick={toggleMenu}>
+            <div className={`close-menu ${!isMenuOpen ? 'hidden' : 'active'}`} onClick={toggleMenu}>
                 X
             </div>
             <div className={`menu ${isMenuOpen ? 'active' : ''}`}>
