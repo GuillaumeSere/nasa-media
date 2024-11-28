@@ -35,7 +35,7 @@ const NavBar = () => {
 
     return (
         <div className='navbar'>
-            <div className='toggle-menu' onClick={toggleMenu}>
+            <div className={`toggle-menu ${isMenuOpen ? 'hidden' : ''}`} onClick={toggleMenu}>
                 <span className={`hamburger-line ${isMenuOpen ? 'active' : ''}`}></span>
                 <span className={`hamburger-line ${isMenuOpen ? 'active' : ''}`}></span>
                 <span className={`hamburger-line ${isMenuOpen ? 'active' : ''}`}></span>
@@ -47,6 +47,9 @@ const NavBar = () => {
                     style={{ height: '80px', width: '100px', marginTop: '-2.5rem', zIndex:'1000'}}
                 >
                 </Player>
+            </div>
+            <div className={`close-menu ${!isMenuOpen ? 'hidden' : ''}`} onClick={toggleMenu}>
+                X
             </div>
             <div className={`menu ${isMenuOpen ? 'active' : ''}`}>
                 <Link className='nav-link' to="/">ACCUEIL</Link>

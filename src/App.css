@@ -441,6 +441,16 @@ h1 {
         transition: all 0.3s ease;
     }
 
+    .hidden{
+        display: none;
+    }
+
+    .close-menu{
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
     .menu {
         display: none;
         /* Masquer le menu par défaut */
