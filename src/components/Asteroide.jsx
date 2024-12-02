@@ -19,7 +19,9 @@ const Asteroide = () => {
     if (!asteroide) return <div />
 
     return (
-        <div className='container-post'>
+        <>
+        <h1 className='title'>Noms Des Asteroïdes</h1>
+        <div className='container-post-asteroid'>
             {asteroide.near_earth_objects.map((post, index) => {
                 return (
                     <div className='asteroide-card' key={index}>
@@ -32,6 +34,7 @@ const Asteroide = () => {
                 )
             })}
         </div>
+        </>
     )
 }
 
