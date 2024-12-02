@@ -6,7 +6,7 @@ import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
 const Epic = () => {
   const [epic, setEpic] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const photosPerPage = 6;
+  const photosPerPage = 16;
 
   useEffect(() => {
     fetchPlanete();
@@ -40,9 +40,9 @@ const Epic = () => {
         autoplay
         loop
         src={animation}
-        style={{ height: '300px', width: '300px', paddingTop: '5rem', marginBottom: '-12rem', marginLeft: '10rem' }}
+        style={{ height: '300px', width: '300px', marginBottom: '-5rem', paddingTop: '2rem' }}
       ></Player>
-      <div className='container-post'>
+      <div className='container-post-epic'>
         {epic.collection.items.slice((currentPage - 1) * photosPerPage, currentPage * photosPerPage).map((post, index) => {
           return (
             <div className='epic-card' key={index}>

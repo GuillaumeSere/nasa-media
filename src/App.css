@@ -102,6 +102,14 @@ body[data-theme=dark] {
     align-items: center;
     margin-bottom: 5rem;
 }
+.container-post-epic{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding-top: 9rem;
+    margin: 0 auto;
+}
 
 .home-card {
     position: relative;

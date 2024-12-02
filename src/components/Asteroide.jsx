@@ -12,7 +12,6 @@ const Asteroide = () => {
             )
             const data = await res.json()
             setAsteroide(data)
-            console.log(asteroide)
         }
     }, [])
 

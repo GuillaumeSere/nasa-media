@@ -61,7 +61,7 @@ const NavBar = () => {
                     onChange={handleChangeTheme}
                     checked={isDarkMode}
                     className="toggle-theme"
-                    size= "15"
+                    size={15}
                 />
             </div>
         </div>
