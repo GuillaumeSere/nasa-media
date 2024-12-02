@@ -581,5 +581,9 @@ h1 {
     .lf-player-container{
         margin-bottom: 1rem;
     }
+    .epic-description {
+        font-size: 16px;
+        line-height: 1.5;
+    }
 
 }
