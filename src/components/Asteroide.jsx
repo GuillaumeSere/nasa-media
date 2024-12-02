@@ -12,6 +12,7 @@ const Asteroide = () => {
             )
             const data = await res.json()
             setAsteroide(data)
+            console.log(asteroide)
         }
     }, [])
 
@@ -24,7 +25,7 @@ const Asteroide = () => {
                     <div className='asteroide-card' key={index}>
                         <div className='asteroide-name'>{post.name}</div>
                         <div className='asteroide-description'>Nom de l'asteroïde : {post.name}</div>
-                        <div className='asteroide-distance'>Distance de la lune : {post.close_approach_data[0]?.miss_distance?.lunar || 'Non disponible'}</div>
+                        <div className='asteroide-distance'>Distance de la lune : {post.close_approach_data[0]?.miss_distance?.lunar || 'Non disponible'} Km</div>
                         <div className='asteroide-designation'>Designation : {post.designation}</div>
                         <div className='atseroide-date'>Date d'approche : {post.close_approach_data[0]?.close_approach_date || 'Non disponible'}</div>
                     </div>

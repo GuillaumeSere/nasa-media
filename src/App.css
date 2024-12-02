@@ -217,7 +217,7 @@ body[data-theme=dark] {
 .asteroide-card {
     position: relative;
     width: 350px;
-    height: 200px;
+    height: 260px;
     padding: 1rem;
     border: 2px solid white;
     margin-top: 2rem;
@@ -234,23 +234,24 @@ body[data-theme=dark] {
     position: absolute;
     font-size: 1.5rem;
     top: 0;
+    margin-top: .5rem;
 }
 
 .asteroide-description {
     font-size: 1.3rem;
     position: absolute;
-    margin-top: 4rem;
+    margin-top: 7rem;
 }
 
 .asteroide-distance {
     position: absolute;
     font-size: 1.2rem;
-    margin-top: 1rem;
+    margin-top: 3rem;
 }
 
 .asteroide-designation {
     position: absolute;
-    margin-top: 7rem;
+    margin-top: 11rem;
 }
 
 .atseroide-date {
