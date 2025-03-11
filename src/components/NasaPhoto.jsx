@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Player } from '@lottiefiles/react-lottie-player';
 import animation from '../images/28514-mars-2020-nasa-mission.json';
 import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
@@ -7,6 +7,7 @@ const NasaPhoto = () => {
   const [photoData, setPhotoData] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const photosPerPage = 6;
+  const scrollRef = useRef(null);
 
   useEffect(() => {
     fetchPhoto();
@@ -16,6 +17,12 @@ const NasaPhoto = () => {
       );
       const data = await res.json();
       setPhotoData(data);
+    }
+  }, [currentPage]);
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }, [currentPage]);
 
@@ -45,7 +52,7 @@ const NasaPhoto = () => {
         className='curiosity'
         style={{ height: '400px', width: '400px', paddingTop: '5rem', marginBottom: '-14rem' }}
       ></Player>
-      <div className='container-post'>
+      <div className='container-post' ref={scrollRef}>
         {photoData.photos.slice((currentPage - 1) * photosPerPage, currentPage * photosPerPage).map((post, index) => {
           return (
             <div className='post-card' key={index}>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Player } from '@lottiefiles/react-lottie-player';
 import animation from '../images/107321-rocket.json';
 import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
@@ -7,6 +7,7 @@ const Epic = () => {
   const [epic, setEpic] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const photosPerPage = 16;
+  const scrollRef = useRef(null);
 
   useEffect(() => {
     fetchPlanete();
@@ -14,6 +15,12 @@ const Epic = () => {
       const res = await fetch(`https://images-api.nasa.gov/search?q=apollo%2022`);
       const data = await res.json();
       setEpic(data);
+    }
+  }, [currentPage]);
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }, [currentPage]);
 
@@ -42,7 +49,7 @@ const Epic = () => {
         src={animation}
         style={{ height: '300px', width: '300px', marginBottom: '-5rem', paddingTop: '2rem' }}
       ></Player>
-      <div className='container-post-epic'>
+      <div className='container-post-epic' ref={scrollRef}>
         {epic.collection.items.slice((currentPage - 1) * photosPerPage, currentPage * photosPerPage).map((post, index) => {
           return (
             <div className='epic-card' key={index}>
