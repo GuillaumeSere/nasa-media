@@ -53,7 +53,7 @@ const Epic = () => {
         {epic.collection.items.slice((currentPage - 1) * photosPerPage, currentPage * photosPerPage).map((post, index) => {
           return (
             <div className='epic-card' key={index}>
-              <div className='epic-title'>{post.data[0].title}</div>
+              <div className='epic-title'>{post.data[0].title.length > 30 ? post.data[0].title.substring(0, 30) + '...' : post.data[0].title}</div>
               <img
                 className='epic-image'
                 src={post.links[0].href}

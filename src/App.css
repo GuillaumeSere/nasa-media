@@ -246,7 +246,7 @@ body[data-theme=dark] {
 }
 
 .asteroide-name {
-    color: rgb(13, 13, 222);
+    color: rgb(55, 126, 133);
     position: absolute;
     font-size: 1.5rem;
     top: 0;
@@ -280,6 +280,7 @@ body[data-theme=dark] {
 }
 
 .epic-card {
+    display: flex;
     position: relative;
     width: 1550px;
     max-height: auto;
@@ -299,13 +300,22 @@ body[data-theme=dark] {
 }
 
 .epic-title {
-    font-size: 1.2rem;
+    position: absolute;
+    font-size: 1rem;
     margin-bottom: 1rem;
+    margin: 0.5rem;
+    padding: 1rem;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .epic-description {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 2;
+    margin-left: 0.5rem;
+    padding: 1rem;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 
@@ -431,6 +441,9 @@ h1 {
 }
 
 @media (max-width: 750px) {
+    .epic-card{
+        display: block;
+    }
     .epic-image {
         width: 100%;
         height: 100%;
